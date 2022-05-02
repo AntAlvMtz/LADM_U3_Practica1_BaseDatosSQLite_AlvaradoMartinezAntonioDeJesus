@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -35,6 +36,23 @@ class GalleryFragment : Fragment() {
 
         binding.op.adapter = ArrayAdapter(this.requireContext(),android.R.layout.simple_spinner_item,opciones)
 
+        binding.op.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                when(position){
+                    0 -> binding.consultar.isEnabled = false
+                    1 -> consultarPorEmp()
+                    2 -> consultarPorArea()
+                    3 -> consultarPorFecha()
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
+
         binding.insertar.setOnClickListener {
             insertar()
         }
@@ -44,6 +62,18 @@ class GalleryFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun consultarPorFecha() {
+        binding.consultar.isEnabled = true
+    }
+
+    private fun consultarPorArea() {
+        binding.consultar.isEnabled = true
+    }
+
+    private fun consultarPorEmp() {
+        binding.consultar.isEnabled = true
     }
 
     private fun consultar() {

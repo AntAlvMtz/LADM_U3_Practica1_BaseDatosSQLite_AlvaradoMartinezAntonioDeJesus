@@ -32,8 +32,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="date"
-        android:hint="FECHA DE COMPRA"
+        android:hint="FECHA DE COMPRA (RANGOS DE FECHA (ININCIO))"
+        android:textSize="15dp"
         android:id="@+id/fecha"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:hint="RANGOS DE FECHA (FIN)"
+        android:id="@+id/fechafin"
         android:layout_marginTop="16dp"/>
 
     <ListView
@@ -52,13 +61,13 @@
             android:layout_height="wrap_content"
             android:text="INSERTAR" />
 
-        <Button
-            android:id="@+id/consultar"
+        <Spinner
+            android:id="@+id/op"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="200dp"
-            android:enabled="false"
-            android:text="CONSULTAR" />
+            android:layout_marginTop="12dp" />
 
         <Button
             android:id="@+id/modificar"
@@ -72,17 +81,15 @@
             android:id="@+id/eliminar"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/consultar"
+            android:layout_below="@+id/op"
             android:layout_marginLeft="200dp"
+            android:layout_marginTop="12dp"
             android:enabled="false"
             android:text="ELIMINAR" />
 
     </RelativeLayout>
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/op"/>
+
 
 
 </LinearLayout>

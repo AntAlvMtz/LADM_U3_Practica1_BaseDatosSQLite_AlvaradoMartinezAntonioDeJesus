@@ -89,6 +89,34 @@ class Inventario(este:HomeFragment) {
     }
 
 
+    fun mostrarTodos() : ArrayList<Inventario>{
+        val baseDatos = AsignacionEquipoComputoBD(este.requireContext(), "asignacionequipocomputo", null, 1)
+        err = ""
+        var arreglo = ArrayList<Inventario>()
+        try {
+            val tabla = baseDatos.readableDatabase
+            val SQLSELECT = "SELECT * FROM INVENTARIO"
+
+            var cursor = tabla.rawQuery(SQLSELECT,null)
+            if (cursor.moveToFirst()){
+                do {
+                    val inventario = Inventario(este)
+                    inventario.codigoBarras = cursor.getString(0)
+                    inventario.tipoEquipo = cursor.getString(1)
+                    inventario.caracteristicas = cursor.getString(2)
+                    inventario.fechaCompra = cursor.getString(3)
+                    arreglo.add(inventario)
+                }while (cursor.moveToNext())
+            }
+
+        }catch (err : SQLiteException){
+            this.err = err.message!!
+        }finally {
+            baseDatos.close()
+        }
+        return arreglo
+    }
+
     fun mostrarPorCaracteristicas(caracteristicas:String) : ArrayList<Inventario>{
         val baseDatos = AsignacionEquipoComputoBD(este.requireContext(), "asignacionequipocomputo", null, 1)
         err = ""
