@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LADM_U3_Practica1_BaseDatosSQLite_AlvaradoMartinezAntonioDeJesus</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Administrador</string>
+    <string name="nav_header_subtitle">admin@ayuda.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_insert_inv">Inventario</string>
+    <string name="menu_insert_asig">Asignación</string>
+</resources>

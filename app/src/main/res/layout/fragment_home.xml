@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CÓDIGO DE BARRAS"
+        android:id="@+id/codigobarras"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="TIPO DE EQUIPO"
+        android:id="@+id/tipoequipo"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CARACTERISTICAS"
+        android:id="@+id/caracteristicas"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:hint="FECHA DE COMPRA"
+        android:id="@+id/fecha"
+        android:layout_marginTop="16dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="264dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/lista"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/insertar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="INSERTAR" />
+
+        <Button
+            android:id="@+id/consultar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:text="CONSULTAR" />
+
+        <Button
+            android:id="@+id/modificar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/insertar"
+            android:enabled="false"
+            android:text="MODIFICAR" />
+
+        <Button
+            android:id="@+id/eliminar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/consultar"
+            android:layout_marginLeft="200dp"
+            android:enabled="false"
+            android:text="ELIMINAR" />
+
+    </RelativeLayout>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/op"/>
+
+
+</LinearLayout>
