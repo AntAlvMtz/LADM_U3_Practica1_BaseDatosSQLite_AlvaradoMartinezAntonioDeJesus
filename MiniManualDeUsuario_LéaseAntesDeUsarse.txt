@@ -1,0 +1,3 @@
+Para insertar hay que llenar todos los campos.
+Para consultar, hay que poner el dato y luego elegir el tipo de consulta, en caso de que el dato ingresado sea érroneo, se corrige y para hacer la consulta ponemos el spinner en "Tipo de consulta" y luego volvemos a elegir el tipo que queramos consultar.
+Para modificar y eliminar, primero se hace una consulta, se selecciona la tupla a modificar/eliminar, y se habilitarán los botones para hacer cualquiera de las dos opciones.
