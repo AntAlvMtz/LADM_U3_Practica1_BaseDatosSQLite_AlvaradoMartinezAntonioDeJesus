@@ -20,6 +20,8 @@ class GalleryFragment : Fragment() {
 
     private var _binding: FragmentGalleryBinding? = null
 
+    val frag = HomeFragment()
+
     val opciones = listOf("Tipo de Consulta","Por Empleado", "Por Area de Trabajo", "Por Fecha")
 
     // This property is only valid between onCreateView and
@@ -97,7 +99,7 @@ class GalleryFragment : Fragment() {
         if(binding.nomempleado.text.isNotEmpty() && binding.areatrab.text.isNotEmpty() && binding.fecha.text.isNotEmpty() && binding.codigobarras.text.isNotEmpty()){
             if(resultado){
                 Toast.makeText(requireContext(),"SE HA MODIFICADO CORRECTAMENTE",Toast.LENGTH_LONG).show()
-                var listaInventario = Inventario(HomeFragment()).mostrarPorCodigo(binding.codigobarras.text.toString())
+                var listaInventario = Inventario(this).mostrarPorCodigo(binding.codigobarras.text.toString())
                 var inventario = ArrayList<String>()
                 if (listaInventario.equals("")){
                     inventario.add("NO HAY ELEMENTOS POR MOSTRAR")

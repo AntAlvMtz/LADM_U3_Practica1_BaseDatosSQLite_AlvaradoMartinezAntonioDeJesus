@@ -3,10 +3,11 @@ package mx.edu.ittepic.ladm_u3_practica1_basedatossqlite_alvaradomartinezantonio
 import android.content.ContentValues
 import android.database.sqlite.SQLiteException
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import mx.edu.ittepic.ladm_u3_practica1_basedatossqlite_alvaradomartinezantoniodejesus.databinding.ActivityMainBinding
 import mx.edu.ittepic.ladm_u3_practica1_basedatossqlite_alvaradomartinezantoniodejesus.ui.gallery.GalleryFragment
 
-class Asignacion(este:GalleryFragment) {
+class Asignacion(este:Fragment) {
     private val este = este
     var id = 0
     var nomEmp = ""

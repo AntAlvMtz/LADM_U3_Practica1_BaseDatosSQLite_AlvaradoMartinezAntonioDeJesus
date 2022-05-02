@@ -3,9 +3,10 @@ package mx.edu.ittepic.ladm_u3_practica1_basedatossqlite_alvaradomartinezantonio
 import android.content.ContentValues
 import android.database.sqlite.SQLiteException
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import mx.edu.ittepic.ladm_u3_practica1_basedatossqlite_alvaradomartinezantoniodejesus.ui.home.HomeFragment
 
-class Inventario(este:HomeFragment) {
+class Inventario(este:Fragment) {
     private val este = este
     var codigoBarras = ""
     var tipoEquipo = ""
