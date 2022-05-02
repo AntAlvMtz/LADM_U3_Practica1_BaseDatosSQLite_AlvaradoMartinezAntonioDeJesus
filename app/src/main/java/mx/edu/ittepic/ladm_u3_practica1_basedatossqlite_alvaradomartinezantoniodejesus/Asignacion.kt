@@ -70,6 +70,35 @@ class Asignacion(este:GalleryFragment) {
         return arreglo
     }
 
+    fun mostrarTodos() : ArrayList<Asignacion>{
+        val baseDatos = AsignacionEquipoComputoBD(este.requireContext(), "asignacionequipocomputo", null, 1)
+        err = ""
+        var arreglo = ArrayList<Asignacion>()
+        try {
+            val tabla = baseDatos.readableDatabase
+            val SQLSELECT = "SELECT * FROM ASIGNACION"
+
+            var cursor = tabla.rawQuery(SQLSELECT,null)
+            if (cursor.moveToFirst()){
+                do {
+                    val asig = Asignacion(este)
+                    asig.id = cursor.getString(0).toInt()
+                    asig.nomEmp = cursor.getString(1)
+                    asig.areaTrabajo = cursor.getString(2)
+                    asig.fecha = cursor.getString(3)
+                    asig.codigoBarras = cursor.getString(4)
+                    arreglo.add(asig)
+                }while (cursor.moveToNext())
+            }
+
+        }catch (err : SQLiteException){
+            this.err = err.message!!
+        }finally {
+            baseDatos.close()
+        }
+        return arreglo
+    }
+
     fun mostrarPorFecha(fecha:String) : ArrayList<Asignacion>{
         val baseDatos = AsignacionEquipoComputoBD(este.requireContext(), "asignacionequipocomputo", null, 1)
         err = ""

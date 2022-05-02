@@ -8,11 +8,18 @@
     android:orientation="vertical"
     tools:context=".ui.gallery.GalleryFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        android:id="@+id/id"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="NOMBRE DEL EMPLEADO"
-        android:id="@+id/nomempleado"/>
+        android:id="@+id/nomempleado"
+        android:layout_marginTop="16dp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -49,18 +56,18 @@
         android:layout_marginTop="24dp">
 
         <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
             android:id="@+id/insertar"
-            android:text="INSERTAR"/>
-
-        <Button
-            android:id="@+id/consultar"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:text="INSERTAR" />
+
+        <Spinner
+            android:id="@+id/op"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="200dp"
-            android:enabled="false"
-            android:text="CONSULTAR" />
+            android:layout_marginTop="12dp" />
 
         <Button
             android:id="@+id/modificar"
@@ -71,19 +78,16 @@
             android:text="MODIFICAR" />
 
         <Button
+            android:id="@+id/eliminar"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/consultar"
-            android:id="@+id/eliminar"
+            android:layout_below="@+id/op"
             android:layout_marginLeft="200dp"
+            android:layout_marginTop="12dp"
             android:enabled="false"
             android:text="ELIMINAR" />
 
     </RelativeLayout>
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/op"/>
 
 </LinearLayout>
